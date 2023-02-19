@@ -83,7 +83,7 @@ In `config/media-input.php` config file you should set your data.
 <x-media-input::image uniqueId="{provide unique id if you use multiple in single page}" name="{file input name}" :fileUrls="['array of file url (optional)']" />
 ```
 
-####Important Note
+#### Important Note
 1. jquery library & bootstrap css & js is required.
 
 2. If you want to use the image sortable feature then you need to include sortable js in your code before the end body tag (Optional)
