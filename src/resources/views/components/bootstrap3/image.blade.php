@@ -12,8 +12,16 @@
                 {{ trans('media-input::media_input.add_media_from_url') }} <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" aria-labelledby="spDropdown">
-                <li><a href="javascript:void(0);" data-toggle="modal" data-target="#spImageModal">{{ trans('media-input::media_input.image_from_url') }}</a></li>
-                <li><a href="javascript:void(0);" data-toggle="modal" data-target="#spVideoModal">{{ trans('media-input::media_input.video_from_url') }}</a></li>
+                <li>
+                    <a href="javascript:void(0);" data-toggle="modal" data-target="#spImageModal{{ $uniqueId }}">
+                        {{ trans('media-input::media_input.image_from_url') }}
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" data-toggle="modal" data-target="#spVideoModal{{ $uniqueId }}">
+                        {{ trans('media-input::media_input.video_from_url') }}
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
@@ -49,7 +57,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="spImageModal">
+<div class="modal fade" id="spImageModal{{ $uniqueId }}">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -75,7 +83,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="spVideoModal">
+<div class="modal fade" id="spVideoModal{{ $uniqueId }}">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
