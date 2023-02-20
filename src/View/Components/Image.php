@@ -30,8 +30,8 @@ class Image extends Component
     public function render()
     {
         $platform = config('media-input.platform');
-        if (!in_array($platform, ['bootstrap3', 'bootstrap4', 'bootstrap5'])) {
-            $platform = 'bootstrap3';
+        if (!in_array($platform, ['bootstrap3', 'bootstrap4', 'bootstrap5', 'default'])) {
+            $platform = 'default';
         }
         return view('media-input::components.' . $platform . '.image');
     }

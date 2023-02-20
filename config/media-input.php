@@ -6,8 +6,8 @@ return [
     | Platform
     |--------------------------------------------------------------------------
     |
-    | Which platform you use in your application. Example: bootstrap3 or bootstrap4 or bootstrap5
-    | Note: you should add platform CSS and JS library
+    | Which platform you use in your application. Example: bootstrap3 or bootstrap4 or bootstrap5 or default
+    | Note: you should add bootstrap platform CSS and JS library. If you use default then no need to add bootstrap CSS and JS library
     | 
     */
 
@@ -18,7 +18,7 @@ return [
     | Styles Default Stack
     |--------------------------------------------------------------------------
     |
-    | Styles to push in appropriate stack
+    | Styles to push in appropriate stack (required)
     | 
     */
 
@@ -29,7 +29,7 @@ return [
     | Scripts Default Stack
     |--------------------------------------------------------------------------
     |
-    | Scripts to push in appropriate stack
+    | Scripts to push in appropriate stack (required)
     | 
     */
 
