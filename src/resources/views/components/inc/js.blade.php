@@ -6,7 +6,7 @@
 
     function spAddImage(id, inputName) {
         var url = $(`#sp_get_image_url${id}`).val();
-        $('#spImageUrlErrorMsg').hide();
+        $(`#spImageUrlErrorMsg${id}`).hide();
 
         if (spCheckURL(url)) {
             $(`#spUploadShow${id}`).append(`<li class="box">
@@ -15,18 +15,18 @@
                 <input type="hidden" name="${inputName}[]" value="${url}">
             </li>`);
             
-            $('#'+id).val('');
-            $('#spImageModal').modal('hide');
+            $(`#sp_get_image_url${id}`).val('');
+            $(`#spImageModal${id}`).modal('hide');
             
             spCountFiles(id);
         } else {
-            $('#spImageUrlErrorMsg').show();
+            $(`#spImageUrlErrorMsg${id}`).show();
         }
     }
 
     function spAddVideo(id, inputName) {
         var url = $(`#sp_get_video_url${id}`).val();
-        $('#spVideoUrlErrorMsg').hide();
+        $(`#spVideoUrlErrorMsg${id}`).hide();
 
         if (spValidYoytube(url)) {
             var video_id = url.split('v=')[1];
@@ -41,12 +41,12 @@
                 <input type="hidden" name="${inputName}[]" value="${url}">
             </li>`);
 
-            $('#'+id).val('');
-            $('#spVideoModal').modal('hide');
+            $(`#sp_get_video_url${id}`).val('');
+            $(`#spVideoModal${id}`).modal('hide');
 
             spCountFiles(id);
         } else {
-            $('#spVideoUrlErrorMsg').show();
+            $(`#spVideoUrlErrorMsg${id}`).show();
         }
     }
 

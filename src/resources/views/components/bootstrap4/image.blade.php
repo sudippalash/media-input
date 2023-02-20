@@ -66,7 +66,7 @@
                 <div class="form-group">
                     <label for="sp_get_image_url{{ $uniqueId }}">{{ trans('media-input::media_input.image_from_url_label') }}</label>
                     <input type="text" class="form-control" placeholder="https://" id="sp_get_image_url{{ $uniqueId }}">
-                    <span class="text-danger" id="spImageUrlErrorMsg" style="display: none;">
+                    <span class="text-danger" id="spImageUrlErrorMsg{{ $uniqueId }}" style="display: none;">
                         {{ trans('media-input::media_input.image_from_url_err') }}
                     </span>
                 </div>
@@ -92,7 +92,7 @@
                 <div class="form-group">
                     <label for="sp_get_video_url{{ $uniqueId }}">{{ trans('media-input::media_input.video_from_url_label') }}</label>
                     <input type="text" class="form-control" placeholder="https://" id="sp_get_video_url{{ $uniqueId }}">
-                    <span class="text-danger" id="spVideoUrlErrorMsg" style="display: none;">
+                    <span class="text-danger" id="spVideoUrlErrorMsg{{ $uniqueId }}" style="display: none;">
                         {{ trans('media-input::media_input.video_from_url_err') }}
                     </span>
                 </div>
