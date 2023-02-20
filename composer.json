@@ -1,11 +1,12 @@
 {
     "name": "sudippalash/media-input",
-    "description": "Laravel package for Media Input field",
+    "description": "Image upload from your device folder, URL & Youtube video URL",
     "keywords": [
-        "Sudip",
-        "Laravel Media Input field",
-        "Media Input field",
-        "Laravel"
+        "Media Input",
+        "Image Upload",
+        "Laravel Image Upload",
+        "Media Upload Like Shopify",
+        "Image Upload Like Shopify"
     ],
     "type": "library",
     "license": "MIT",
