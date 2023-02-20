@@ -28,7 +28,7 @@
             @if (!empty($fileUrls))
                 @foreach ($fileUrls as $url)
                 <li class="box">
-                    <span class="badge bg-secondary">x</span>
+                    <span class="badge">x</span>
                     <a href="{{ $url }}"><img src="{{ $url }}" /></a>
                     <input type="hidden" name="{{ $inputName }}[]" value="{{ $url }}">
                 </li>
@@ -37,7 +37,7 @@
             </ul>
             <div id="spUploadButton{{ $uniqueId }}" class="sp-upload-button{{ !empty($fileUrls) ? '2' : '' }}">
                 <span class="middle">
-                    <span class="badge bg-secondary">
+                    <span class="badge">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 8l-5-5-5 5M12 4.2v10.3"/>
                         </svg>
