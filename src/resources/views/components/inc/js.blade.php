@@ -1,5 +1,5 @@
 <script>
-    $('#spUploadImage').click(function (e) {
+    $('body').on('click', '#spUploadImage', function (e) {
         e.preventDefault();
         $('#inputImage input').click();
     });
@@ -14,10 +14,10 @@
                 <a href="${url}"><img src="${url}" /></a>
                 <input type="hidden" name="${inputName}[]" value="${url}">
             </li>`);
-            
+
             $(`#sp_get_image_url${id}`).val('');
             $(`#spImageModal${id}`).modal('hide');
-            
+
             spCountFiles(id);
         } else {
             $(`#spImageUrlErrorMsg${id}`).show();
@@ -69,7 +69,7 @@
                         <a href="${e.target.result}"><img src="${e.target.result}" /></a>
                         <input type="hidden" name="${inputName}[]" value="${e.target.result}">
                     </li>`);
-                    
+
                     spCountFiles(id);
                 };
                 reader.readAsDataURL(input.files[index]);

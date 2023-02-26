@@ -4,8 +4,8 @@
         spCountFiles({{ $uniqueId }});
     });
 
-    $(function () {
-        if ( typeof Sortable == 'function' ) { 
+    $(document).ready(function () {
+        if (typeof Sortable == 'function') {
             var el = document.getElementById('spUploadShow{{ $uniqueId }}');
             Sortable.create(el, {
                 group: "words",
@@ -17,7 +17,7 @@
             });
         }
 
-        if ( $.isFunction($.fn.magnificPopup) ) {
+        if ($.isFunction($.fn.magnificPopup)) {
             $('#spUploadShow{{ $uniqueId }}').magnificPopup({
                 delegate: 'a',
                 type: 'image'
