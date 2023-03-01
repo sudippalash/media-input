@@ -79,8 +79,26 @@ In `config/media-input.php` config file you should set your data.
 ## Usage
 
 ```php
-<x-media-input::image uniqueId="{provide unique id if you use multiple in single page}" name="{file input name}" :fileUrls="['array of file url (optional)']" />
+<x-media-input::image 
+    uniqueId="{provide unique id if you use multiple in single page}" 
+    name="{file input name}" 
+    :fileUrls="['array of file url (optional)']" 
+/>
 ```
+
+or
+
+```php
+<x-media-input::image 
+    uniqueId="{provide unique id if you use multiple in single page}" 
+    name="{file input name}" 
+    itemKey="id" 
+    itemValue="image_url" 
+    :items="[collection of object (optional)]"
+/>
+```
+
+
 
 ## Note
 1. jquery library is required. If your project already added jquery then ignore it. 

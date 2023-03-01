@@ -13,6 +13,7 @@
                 <span class="badge">x</span>
                 <a href="${url}"><img src="${url}" /></a>
                 <input type="hidden" name="${inputName}[]" value="${url}">
+                <input type="hidden" name="${inputName}_id[]">
             </li>`);
 
             $(`#sp_get_image_url${id}`).val('');
@@ -39,6 +40,7 @@
                 <span class="badge">x</span>
                 <a href="${url}" class="mfp-iframe"><img src="https://img.youtube.com/vi/${video_id}/sddefault.jpg"></a>
                 <input type="hidden" name="${inputName}[]" value="${url}">
+                <input type="hidden" name="${inputName}_id[]">
             </li>`);
 
             $(`#sp_get_video_url${id}`).val('');
@@ -68,6 +70,7 @@
                         <span class="badge">x</span>
                         <a href="${e.target.result}"><img src="${e.target.result}" /></a>
                         <input type="hidden" name="${inputName}[]" value="${e.target.result}">
+                        <input type="hidden" name="${inputName}_id[]">
                     </li>`);
 
                     spCountFiles(id);
@@ -87,4 +90,37 @@
 
         $(`#spUploadShow${id} li`).first().addClass("width-big");
     }
+
+    var MediaInput = {
+        initializeSortable: function (uniqueId) {
+            if (typeof Sortable == 'function') {
+                var el = document.getElementById(`spUploadShow${uniqueId}`);
+                if (el) {
+                    Sortable.create(el, {
+                        group: "words",
+                        animation: 150,
+                        onUpdate: function () {
+                            $(`#spUploadShow${uniqueId} li`).removeClass("width-big");
+                            $(`#spUploadShow${uniqueId} li`).first().addClass("width-big");
+                        },
+                    });
+                }
+            }
+        },
+        initializeMagnificPopup: function (uniqueId) {
+            if ($.isFunction($.fn.magnificPopup)) {
+                var el = $(`#spUploadShow${uniqueId}`);
+                if (el) {
+                    el.magnificPopup({
+                        delegate: 'a',
+                        type: 'image'
+                    });
+                }
+            }
+        },
+        initializeAll: function (uniqueId) {
+            this.initializeSortable(uniqueId);
+            this.initializeMagnificPopup(uniqueId);
+        },
+    };
 </script>

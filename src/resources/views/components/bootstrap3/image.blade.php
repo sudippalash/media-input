@@ -29,17 +29,28 @@
     <div class="panel-body">
         <div class="sp-upload-box">
             <ul class="sp-upload-show" id="spUploadShow{{ $uniqueId }}">
-            @if (!empty($fileUrls))
-                @foreach ($fileUrls as $url)
-                <li class="box">
-                    <span class="badge">x</span>
-                    <a href="{{ $url }}"><img src="{{ $url }}" /></a>
-                    <input type="hidden" name="{{ $inputName }}[]" value="{{ $url }}">
-                </li>
-                @endforeach
-            @endif
+                @if (!empty($fileUrls))
+                    @foreach ($fileUrls as $key => $url)
+                    <li class="box{{ $key == 0 ? ' width-big' : '' }}">
+                        <span class="badge">x</span>
+                        <a href="{{ $url }}"><img src="{{ $url }}" /></a>
+                        <input type="hidden" name="{{ $inputName }}[]" value="{{ $url }}">
+                    </li>
+                    @endforeach
+                @elseif(!empty($items))
+                    @foreach ($items as $key => $item)
+                        @if (isset($item->{$itemKey}) && isset($item->{$itemValue}))
+                        <li class="box{{ $key == 0 ? ' width-big' : '' }}">
+                            <span class="badge">x</span>
+                            <a href="{{ $item->{$itemValue} }}"><img src="{{ $item->{$itemValue} }}" /></a>
+                            <input type="hidden" name="{{ $inputName }}[]">
+                            <input type="hidden" name="{{ $inputName }}_id[]" value="{{ $item->{$itemKey} }}">
+                        </li>
+                        @endif
+                    @endforeach
+                @endif
             </ul>
-            <div id="spUploadButton{{ $uniqueId }}" class="sp-upload-button{{ !empty($fileUrls) ? '2' : '' }}">
+            <div id="spUploadButton{{ $uniqueId }}" class="sp-upload-button{{ $hasFiles ? '2' : '' }}">
                 <span class="middle">
                     <span class="badge">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
