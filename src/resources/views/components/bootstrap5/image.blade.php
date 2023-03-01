@@ -7,6 +7,8 @@
 <div class="card">
     <div class="card-header">
         {{ trans('media-input::media_input.upload_title') }}
+
+        @if (config('media-input.image_from_url') && config('media-input.video_from_url'))
         <div class="dropdown float-end">
             <a href="javascript:void(0);" class="dropdown-toggle" id="spDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                 {{ trans('media-input::media_input.add_media_from_url') }} <span class="caret"></span>
@@ -20,6 +22,19 @@
                 </a>
             </div>
         </div>
+        @elseif (config('media-input.image_from_url'))
+        <div class="float-end">
+            <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#spImageModal{{ $uniqueId }}">
+                {{ trans('media-input::media_input.image_from_url') }}
+            </a>
+        </div>
+        @elseif (config('media-input.video_from_url'))
+        <div class="float-end">
+            <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#spVideoModal{{ $uniqueId }}">
+                {{ trans('media-input::media_input.video_from_url') }}
+            </a>
+        </div>
+        @endif
     </div>
 
     <div class="card-body">

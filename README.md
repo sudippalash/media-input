@@ -54,6 +54,18 @@ In `config/media-input.php` config file you should set your data.
 
         /*
         |--------------------------------------------------------------------------
+        | From URL
+        |--------------------------------------------------------------------------
+        |
+        | If you want to upload image from url & embed youtube video url
+        | 
+        */
+
+        'image_from_url' => true,
+        'video_from_url' => true,
+
+        /*
+        |--------------------------------------------------------------------------
         | Styles Default Stack
         |--------------------------------------------------------------------------
         |
