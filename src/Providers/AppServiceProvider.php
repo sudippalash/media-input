@@ -18,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'media-input');
 
-        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'media-input');
+        $this->loadTranslationsFrom(__DIR__ . '/../lang', 'media-input');
 
         $this->registerComponents();
 
@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
         ], 'config');
 
         $this->publishes([
-            __DIR__.'/../resources/lang' => resource_path('lang/vendor/media-input'),
+            __DIR__.'/../lang' => lang_path('vendor/media-input'),
         ], 'lang');
 
         $this->publishes([
