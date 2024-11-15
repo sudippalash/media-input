@@ -7,11 +7,17 @@ use Illuminate\View\Component;
 class Image extends Component
 {
     public $uniqueId;
+
     public $inputName;
+
     public $itemKey;
+
     public $itemValue;
+
     public $items;
+
     public $fileUrls;
+
     public $hasFiles;
 
     /**
@@ -27,7 +33,7 @@ class Image extends Component
         $this->itemValue = $itemValue;
         $this->items = $items;
         $this->fileUrls = is_array($fileUrls) ? $fileUrls : [];
-        $this->hasFiles = !(empty($this->fileUrls) && empty($this->items));
+        $this->hasFiles = ! (empty($this->fileUrls) && empty($this->items));
     }
 
     /**
@@ -38,9 +44,10 @@ class Image extends Component
     public function render()
     {
         $platform = config('media-input.platform');
-        if (!in_array($platform, ['bootstrap3', 'bootstrap4', 'bootstrap5', 'default'])) {
+        if (! in_array($platform, ['bootstrap3', 'bootstrap4', 'bootstrap5', 'default'])) {
             $platform = 'default';
         }
-        return view('media-input::components.' . $platform . '.image');
+
+        return view('media-input::components.'.$platform.'.image');
     }
 }

@@ -8,7 +8,7 @@ return [
     |
     | Which platform you use in your application. Example: bootstrap3 or bootstrap4 or bootstrap5 or default
     | Note: you should add bootstrap platform CSS and JS library. If you use default then no need to add bootstrap CSS and JS library
-    | 
+    |
     */
 
     'platform' => 'bootstrap5',
@@ -19,7 +19,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | If you want to upload image from url & embed youtube video url
-    | 
+    |
     */
 
     'image_from_url' => true,
@@ -31,7 +31,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Styles to push in appropriate stack (required)
-    | 
+    |
     */
 
     'styles_stack' => 'styles',
@@ -42,7 +42,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Scripts to push in appropriate stack (required)
-    | 
+    |
     */
 
     'scripts_stack' => 'scripts',

@@ -2,29 +2,28 @@
 
 namespace Sudip\MediaInput\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../../config/media-input.php', 'media-input'
+            __DIR__.'/../../config/media-input.php', 'media-input'
         );
     }
 
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'media-input');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'media-input');
 
-        $this->loadTranslationsFrom(__DIR__ . '/../lang', 'media-input');
+        $this->loadTranslationsFrom(__DIR__.'/../lang', 'media-input');
 
         $this->registerComponents();
 
-
         $this->publishes([
-            __DIR__ . '/../../config/media-input.php' => config_path('media-input.php'),
+            __DIR__.'/../../config/media-input.php' => config_path('media-input.php'),
         ], 'config');
 
         $this->publishes([

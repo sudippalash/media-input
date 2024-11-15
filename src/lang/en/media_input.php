@@ -8,7 +8,7 @@ return [
     'image_from_url' => 'Add image from URL',
     'image_from_url_label' => 'Paste image URL',
     'image_from_url_err' => 'Invalid Image Url!',
-    
+
     'video_from_url' => 'Embed YouTube video',
     'video_from_url_label' => 'Paste YouTube URL',
     'video_from_url_err' => 'Invalid Youtube VIdeo Url!',
